@@ -1,0 +1,26 @@
+mutation {
+  registerUser(username: "example_user", email: "example@example.com", password: "example_password") {
+    user {
+      id
+      username
+      email
+    }
+    token
+  }
+}
+
+mutation LoginUser($email: String!, $password: String!) {
+  loginUser(email: $email, password: $password) {
+    token
+    user {
+      id
+      username
+      email
+      psychologyScore
+    }
+  }
+}
+
+{  "email": "example@example.com",
+  "password":  "example_password"
+}
